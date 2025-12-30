@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#000000">
+
+    <title>SalahUddin OS v14 | The Ultimate Experience</title>
+    <meta name="description" content="SalahUddin OS v14: Interactive Terminal, Games, & New Year Celebration. Developed by Salah Uddin Kader.">
+    <meta name="author" content="Salah Uddin Kader">
+    <meta property="og:image" content="https://github.com/salahuddingfx.png">
+
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='black'/><text x='10' y='70' font-family='monospace' font-weight='bold' font-size='60' fill='%2300ff41'>&gt;_</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Orbitron:wght@500;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <link rel="stylesheet" href="Assets/style.css">
+</head>
+<body>
+
+    <div id="bios-layer" class="layer">
+        <div id="bios-text"></div>
+    </div>
+
+    <div id="login-layer" class="layer">
+        <div class="login-card">
+            <div class="avatar-frame">
+                <div class="spin-ring"></div>
+                <img src="https://github.com/salahuddingfx.png" alt="Dev" class="avatar">
+            </div>
+            <div class="login-title">Salah Uddin OS v -> NONE</div>
+            <div style="color:var(--secondary); font-size:0.8rem; letter-spacing:2px; margin-bottom: 20px;">GOD MODE EDITION</div>
+            <input type="text" id="username" class="login-input" placeholder="ENTER CODENAME" autocomplete="off">
+            <button class="btn" id="btn-login">ACCESS SYSTEM</button>
+        </div>
+    </div>
+
+    <div id="ui-layer" class="layer">
+        <div id="header">
+            <div class="head-left">
+                <div class="sys-stat">USER: <span class="sys-val" id="hud-user">GUEST</span></div>
+            </div>
+            <div class="live-clock" id="clock-display">Initializing...</div>
+            <div class="head-right">
+                <div class="sys-stat">BAT: <span class="sys-val" id="bat-level">100%</span></div>
+                <div class="theme-dots">
+                    <div class="t-dot" style="background:#00ff41" onclick="setTheme('green')"></div>
+                    <div class="t-dot" style="background:#ff00cc" onclick="setTheme('pink')"></div>
+                    <div class="t-dot" style="background:#bc13fe" onclick="setTheme('purple')"></div>
+                    <div class="t-dot" style="background:#ffd700" onclick="setTheme('gold')"></div>
+                    <div class="t-dot" style="background:#00ffff" onclick="setTheme('cyan')"></div>
+                    <div class="t-dot" style="background:#ff0000" onclick="setTheme('blood')"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="terminal-window">
+            <div id="watermark">DEV: SALAH UDDIN KADER | v -> NONE</div>
+        </div>
+
+        <div id="command-bar">
+            <span class="cmd-prompt">➜</span>
+            <input type="text" id="cmd-input" placeholder="Type 'help' for commands..." autocomplete="off">
+            <button id="send-btn">🚀</button>
+        </div>
+    </div>
+
+    <div id="game-menu" class="layer">
+        <h2 style="color:var(--primary); margin-bottom:30px; font-family:var(--font-head); font-size:2rem;">SELECT GAME PROTOCOL</h2>
+        <div style="display:flex; flex-wrap:wrap; justify-content:center;">
+            <div class="game-card" onclick="startGame('snake')">
+                <h3 style="font-size:1.5rem;">🐍 SNAKE</h3>
+                <p style="color:#aaa;">Classic Survival</p>
+            </div>
+            <div class="game-card" onclick="startGame('pong')">
+                <h3 style="font-size:1.5rem;">🏓 PONG</h3>
+                <p style="color:#aaa;">Retro Tennis</p>
+            </div>
+        </div>
+        <button class="btn" style="margin-top:30px; background:transparent; border:1px solid #fff; color:#fff;" onclick="closeOverlays()">CANCEL</button>
+    </div>
+
+    <div id="game-overlay" class="layer">
+        <h2 id="game-title" style="margin-bottom:10px; color:var(--accent); font-family:var(--font-head);">GAME</h2>
+        <div style="margin-bottom:15px; font-family:var(--font-ui); font-size:1.2rem;">SCORE: <span id="game-score" style="color:var(--gold);">0</span></div>
+        <canvas id="game-canvas" class="game-canvas-container" width="400" height="400"></canvas>
+        <div style="margin-top:15px; color:#666;">Controls: Arrows / Swipe</div>
+        <button class="btn" style="margin-top:20px;" onclick="closeOverlays()">EXIT GAME</button>
+    </div>
+
+    <div id="celebration-overlay" class="layer">
+        <div class="celebrate-card">
+            <div class="celeb-title">HAPPY NEW YEAR<br>2026</div>
+            <div class="celeb-quote" id="celeb-quote-text">"The future belongs to those who believe in the beauty of their dreams."</div>
+            <button class="btn" onclick="closeOverlays()">CONTINUE</button>
+        </div>
+    </div>
+
+    <div id="outro-layer" class="layer">
+        <div class="shutdown-msg">SYSTEM HALTED</div>
+        <div style="color:#666; font-style:italic; margin-top:20px;">"Goodbye, Operator."</div>
+    </div>
+
+    <canvas id="fireworks-canvas"></canvas>
+    <canvas id="bg-canvas"></canvas>
+    <div class="scanline"></div>
+
+    <script src="Assets/script.js"></script>
+</body>
+</html>
